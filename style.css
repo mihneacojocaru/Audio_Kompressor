@@ -9,7 +9,7 @@ body {
   position: relative;
   font-family: "Oswald", sans-serif;
   background-color: white;
-  background-color: rgb(34, 34, 34);
+  background-color: rgb(52, 67, 72);
   color: white;
   overflow: hidden;
 }
@@ -107,6 +107,7 @@ aside button:active{
 
 canvas {
   grid-area: display;
+  background-color: rgb(34, 34, 34);
 }
 
 #controls > input {
@@ -129,6 +130,11 @@ canvas {
 }
 
 @media only screen and (max-width: 750px) {
+
+    body{
+        overflow: scroll;
+    }
+
   #controls {
     max-height: 100vh;
     overflow: scroll;
