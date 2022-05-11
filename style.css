@@ -6,11 +6,86 @@
 }
 
 body {
+  position: relative;
   font-family: "Oswald", sans-serif;
   background-color: white;
   background-color: rgb(34, 34, 34);
   color: white;
   overflow: hidden;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 1em;
+  font-size: 2em;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  position: absolute;
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+footer section{
+    max-width: 600px;
+    text-align: left;
+    font-size: 1.5em;
+}
+
+footer h2{
+    padding: 1em 0;
+    font-size: 3em;
+    text-decoration: underline;
+}
+
+footer section p {
+    padding: 1em 0;
+}
+
+
+
+a {
+  color: white;
+  cursor: pointer;
+}
+
+aside p {
+  background-color: rgb(52, 67, 72);
+  text-align: center;
+  padding: 10px 0;
+}
+
+aside button{
+    cursor: pointer;
+    padding: .4em;
+    font-size: 1em;
+    border-radius: 0;
+    border: none;
+    background-color: rgb(59, 74, 79);
+    transition: .5s ease;
+    color: white;
+}
+
+aside button:hover{
+    background-color: rgb(52, 67, 72);
+}
+
+aside button:active{
+    background-color: rgb(34, 34, 34);
 }
 
 .grid-container {
@@ -23,29 +98,15 @@ body {
   grid-template-areas: "controls display";
 }
 
-/*   
-  #wrap{
-    position:absolute;
-    top:50%;
-    left:50%;
-    margin-left:auto;
-    margin-right:auto;
-    transform:translateY(-50%) translateX(-50%); 
-    width:100%;
-    height:100%;
-  } */
-
 #controls {
-    grid-area: controls;
-  /* float:left;
-    position:relative; */
+  grid-area: controls;
   background: rgb(52, 67, 72);
-  /*height: 100%;*/
   padding: 20px;
+  height: 100%;
 }
 
-canvas{
-    grid-area: display;
+canvas {
+  grid-area: display;
 }
 
 #controls > input {
@@ -62,13 +123,13 @@ canvas{
 }
 
 #waveform {
-  border: 4px solid black;
-  height: 99%;
+  border: 4px solid white;
+  height: 100%;
   width: 99%;
 }
 
 @media only screen and (max-width: 750px) {
- #controls {
+  #controls {
     max-height: 100vh;
     overflow: scroll;
     font-size: 100%;
@@ -77,5 +138,31 @@ canvas{
     font-size: 100%;
     margin-bottom: 5px;
     zoom: 0.7;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .grid-container {
+    grid-template-columns: 200px auto;
+  }
+
+  canvas {
+    max-height: 100vh;
+  }
+
+  footer h2{
+      font-size: 2em;
+  }
+
+  footer section{
+    max-width: 300px;
+    text-align: center;
+    font-size: 1em;
+  }
+
+  footer section p{
+      padding: 1em 0;
   }
 }
